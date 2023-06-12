@@ -1,7 +1,7 @@
 """
 title : 0003_largest_prime_factor.py
 create : @tarickali 23/03/24
-update : @tarickali 23/03/24
+update : @tarickali 23/06/12
 
 Problem Description:
 --------------------
@@ -17,6 +17,8 @@ def sieve(N: int) -> list[int]:
     A = [True] * (N + 1)
     m = int(math.sqrt(N))
     for i in range(2, m + 1):
+        if not A[i]:
+            continue
         j = i**2
         while j <= N:
             A[j] = False
